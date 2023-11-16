@@ -103,8 +103,8 @@ export default function Information() {
 
       <div className={styles.footer}>
         <p className={styles.title}>
-          В среднем доход наших мото курьеров в месяц варьируется от 250 тыс. до
-          500 тыс. тенге и выше.
+          В среднем доход наших водителей в месяц варьируется от 50 000 до 150
+          000 рублей.
         </p>
         <div className={styles.inner}>
           <Link href={"/"} className={styles.button}>

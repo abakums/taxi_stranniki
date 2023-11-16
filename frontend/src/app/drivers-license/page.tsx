@@ -17,6 +17,7 @@ export default function DriversLicense() {
   const [formErrors, setFormErrors] = useState({
     countryOfIssue: false,
     dateOfIssue: false,
+    dateOfBirth: false,
     driversLicense: false,
     validityPeriod: false,
   });
@@ -34,10 +35,14 @@ export default function DriversLicense() {
     if (!state.validityPeriod)
       setFormErrors((prev) => ({ ...prev, validityPeriod: true }));
 
+    if (!state.dateOfBirth)
+      setFormErrors((prev) => ({ ...prev, dateOfBirth: true }));
+
     if (
       !!state.countryOfIssue &&
       !!state.dateOfIssue &&
       !!state.driversLicense &&
+      !!state.dateOfBirth &&
       !!state.validityPeriod
     ) {
       return router.push("/car-brand");
@@ -59,6 +64,26 @@ export default function DriversLicense() {
       </p>
 
       <div className={styles.form}>
+        <label className={styles.field}>
+          <span aria-required>Дата рождения</span>
+          <input
+            type="date"
+            onChange={(e) => {
+              updateState({
+                dateOfBirth: e.target.value,
+              });
+
+              if (formErrors.dateOfBirth)
+                setFormErrors((prev) => ({
+                  ...prev,
+                  dateOfBirth: false,
+                }));
+            }}
+            value={state.dateOfBirth}
+          />
+          {formErrors.dateOfBirth && <p>Это поле обязательно</p>}
+        </label>
+
         <label className={styles.field}>
           <span aria-required>Серия и Номер водительского удостоверения</span>
           <input

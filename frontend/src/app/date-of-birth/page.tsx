@@ -39,7 +39,7 @@ export default function DateOfBirth() {
           заработка:
         </li>
       </ul>
-
+      {/* 
       <iframe
         className={styles.iframe}
         width="560"
@@ -48,29 +48,7 @@ export default function DateOfBirth() {
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
-      ></iframe>
-
-      <div className={styles.form}>
-        <label className={styles.field}>
-          <span aria-required>Дата рождения</span>
-          <input
-            type="date"
-            onChange={(e) => {
-              updateState({
-                dateOfBirth: e.target.value,
-              });
-
-              if (formErrors.dateOfBirth)
-                setFormErrors((prev) => ({
-                  ...prev,
-                  dateOfBirth: false,
-                }));
-            }}
-            value={state.dateOfBirth}
-          />
-          {formErrors.dateOfBirth && <p>Это поле обязательно</p>}
-        </label>
-      </div>
+      ></iframe> */}
 
       <div className={styles.footer}>
         <Link href={"/information"} className={styles.button}>

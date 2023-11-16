@@ -30,6 +30,13 @@ class TaxiPark(models.Model):
         (MOTO_COURIER_TYPE, "Мото курьер")
     )
 
+    RU_COUNTRY = "ru"
+    KZ_COUNTRY = "kz"
+    COUNTRIES = (
+        (RU_COUNTRY, "Россия"),
+        (KZ_COUNTRY, "Казахстан")
+    )
+
     name = models.CharField("Название", max_length=200)
     park_id = models.CharField("ID парка", max_length=100)
     api_key = models.CharField("API ключ", max_length=100)
@@ -43,6 +50,8 @@ class TaxiPark(models.Model):
         verbose_name="Типы такси парка",
         blank=True
     )
+    country = models.CharField("Страна", max_length=10, choices=COUNTRIES, default=RU_COUNTRY)
+    form_name = models.CharField("Заголовок анкеты", max_length=200, default="")
 
     class Meta:
         verbose_name = "такси парк"

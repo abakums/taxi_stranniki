@@ -143,3 +143,5 @@ MEDIA_URL = "/media/"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 YANDEX_TAXI_API_HOST = "https://fleet-api.taxi.yandex.net"
+
+HOST = os.getenv("HOST", "http://localhost:3000")

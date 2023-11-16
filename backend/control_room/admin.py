@@ -11,7 +11,7 @@ class TaxiParkAdmin(admin.ModelAdmin):
     search_fields = ("name",)
 
     def link(self, obj):
-        return f"{settings.HOST}/{obj.country}/?park={obj.name}"
+        return f"{settings.HOST}/?park={obj.name}"
 
     link.short_description = "Ссылка на анкету"
 

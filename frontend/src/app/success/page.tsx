@@ -12,7 +12,7 @@ export default function Success() {
         body: JSON.stringify(state)
     };
 
-    fetch('http://localhost:8000/api/sending_data/', requestOptions)
+    fetch('http://soyuz-voditeley.ru:8000/api/sending_data/', requestOptions)
         .then(response => response.json())
         .then(data => console.log(data))
         .catch(error => console.error(error));

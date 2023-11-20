@@ -18,12 +18,8 @@ export default function DateOfBirth() {
   });
 
   function handleSubmit() {
-    if (!state.dateOfBirth)
-      setFormErrors((prev) => ({ ...prev, carStateNumber: true }));
-
-    if (!!state.dateOfBirth) {
-      return router.push(navigation[state.vacancy]);
-    }
+   
+    router.push(navigation[state.vacancy]);
   }
 
   return (

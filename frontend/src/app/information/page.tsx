@@ -19,6 +19,7 @@ export default function Information() {
   });
 
   function handleSubmit() {
+    updateState({ vacancy: "Такси" });
     if (!state.firstName)
       setFormErrors((prev) => ({ ...prev, firstName: true }));
 

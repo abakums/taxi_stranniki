@@ -1,6 +1,7 @@
 psycopg2
 django==4.1.1
-djangorestframework
+djangorestframework~=3.12.4
 requests
 django-dotenv
 django-cors-headers
+pytz

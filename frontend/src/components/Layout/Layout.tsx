@@ -26,7 +26,7 @@ export function Layout({ children }: IChild) {
 
   return (
     <main className={styles.main}>
-      <h1 className={styles.heading}>Союз водителей</h1>
+      <h1 className={styles.heading}>Странники</h1>
 
       <div className={styles.wrapper}>{children}</div>
     </main>

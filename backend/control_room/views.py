@@ -49,7 +49,7 @@ def send_data(request):
     data = request.data
     print(data)
     user_vacancy = data.get("vacancy")
-    park = TaxiPark.objects.all().first()
+    park = TaxiPark.objects.filter(taxi_park_type__icontains=user_vacancies.get(user_vacancy)).first()
     auth_headers = park.get_auth_headers()
 
     mark = data.get("carBrand")

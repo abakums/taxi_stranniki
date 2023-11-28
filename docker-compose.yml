@@ -1,26 +1,26 @@
 version: '2.2'
 
 services:
-  nginx:
-    container_name: nginx
-    build:
-      context: .
-      dockerfile: docker/Dockerfile.nginx
-    restart: always
-    volumes:
-      - static-files:/var/html/static:ro
-    depends_on:
-      - django
-    ports:
-      - "465:465"
-      - "587:587"
-      - "80:80"
-      - "443:443"
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "1"
+#  nginx:
+#    container_name: nginx
+#    build:
+#      context: .
+#      dockerfile: docker/Dockerfile.nginx
+#    restart: always
+#    volumes:
+#      - static-files:/var/html/static:ro
+#    depends_on:
+#      - django
+#    ports:
+#      - "465:465"
+#      - "587:587"
+#      - "80:80"
+#      - "443:443"
+#    logging:
+#      driver: "json-file"
+#      options:
+#        max-size: "10m"
+#        max-file: "1"
 
   django:
     container_name: django
@@ -54,8 +54,8 @@ services:
       - django
     volumes:
       - ./frontend:/frontend
-      - ./frontend/node_modules
-      - ./frontend/.next
+      - ./frontend/node_modules:/frontend/node_modules
+      - ./frontend/.next:/frontend/.next
     restart: always
 
   database:

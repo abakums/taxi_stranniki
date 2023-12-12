@@ -58,7 +58,8 @@ def send_data(request):
     trans = transmissions.get(mis)
     country = data.get("countryOfIssue")
     short = short_countries.get(country)
-
+    phone = data.get("phone")
+    phone = phone.replace(" ", "").replace("(", "").replace(")", "").replace("-", "").replace("\n", "")
     if user_vacancy == "Пеший или Вело курьер":
         body = {
             "birth_date": data.get("dateOfBirth"),
@@ -67,8 +68,8 @@ def send_data(request):
                 "last_name": data.get("lastName"),
                 "middle_name": data.get("middleName")
             },
-            "phone": data.get("phone").replace(" ", "").replace("\n", ""),
-            "work_rule_id": park.work_rule_id
+            "phone": phone,
+            "work_rule_id": "e26a3cf21acfe01198d50030487e046b"
         }
         response = requests.post(
             f"{settings.YANDEX_TAXI_API_HOST}/v2/parks/contractors/walking-courier-profile",
@@ -114,9 +115,9 @@ def send_data(request):
         print(response.content)
         body = {
             "account": {
-                "balance_limit": "1000",
+                "balance_limit": "5",
                 "block_orders_on_balance_below_limit": True,
-                "work_rule_id": park.work_rule_id
+                "work_rule_id": "e26a3cf21acfe01198d50030487e046b"
             },
             "car_id": response.json().get("vehicle_id"),
             "order_provider": {
@@ -125,7 +126,7 @@ def send_data(request):
             },
             "person": {
                 "contact_info": {
-                    "phone": data.get("phone")
+                    "phone": phone
                 },
                 "driver_license": {
                     "country": short,
@@ -193,9 +194,9 @@ def send_data(request):
 
         body = {
             "account": {
-                "balance_limit": "1000",
+                "balance_limit": "5",
                 "block_orders_on_balance_below_limit": True,
-                "work_rule_id": park.work_rule_id
+                "work_rule_id": "e26a3cf21acfe01198d50030487e046b"
             },
             "car_id": response.json().get("vehicle_id"),
             "order_provider": {
@@ -204,7 +205,7 @@ def send_data(request):
             },
             "person": {
                 "contact_info": {
-                    "phone": data.get("phone")
+                    "phone": phone
                 },
                 "driver_license": {
                     "country": short,
@@ -272,9 +273,9 @@ def send_data(request):
 
         body = {
             "account": {
-                "balance_limit": "1000",
+                "balance_limit": "5",
                 "block_orders_on_balance_below_limit": True,
-                "work_rule_id": park.work_rule_id
+                "work_rule_id": "e26a3cf21acfe01198d50030487e046b"
             },
             "car_id": response.json().get("vehicle_id"),
             "order_provider": {
@@ -283,7 +284,7 @@ def send_data(request):
             },
             "person": {
                 "contact_info": {
-                    "phone": data.get("phone")
+                    "phone": phone
                 },
                 "driver_license": {
                     "country": "kaz",
@@ -360,10 +361,10 @@ def send_data(request):
 
         body = {
             "account": {
-                "balance_limit": "1000",
+                "balance_limit": "5",
                 "block_orders_on_balance_below_limit": True,
                 # "payment_service_id": "12345",
-                "work_rule_id": park.work_rule_id
+                "work_rule_id": "e26a3cf21acfe01198d50030487e046b"
             },
             "car_id": response.json().get("vehicle_id"),
             "order_provider": {
@@ -372,7 +373,7 @@ def send_data(request):
             },
             "person": {
                 "contact_info": {
-                    "phone": data.get("phone")
+                    "phone": phone
                 },
                 "driver_license": {
                     "country": short,

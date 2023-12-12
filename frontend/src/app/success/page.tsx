@@ -12,7 +12,7 @@ export default function Success() {
         body: JSON.stringify(state)
     };
 
-    fetch('http://62.217.176.75:8000/api/sending_data/', requestOptions)
+    fetch('http://45.12.72.22:8000/api/sending_data/', requestOptions)
         .then(response => response.json())
         .then(data => console.log(data))
         .catch(error => console.error(error));

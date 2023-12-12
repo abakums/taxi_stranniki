@@ -3,6 +3,9 @@ import styles from "./Header.module.scss";
 export function Header() {
   return (
     <header className={styles.header}>
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script type="text/javascript" src="./metrika.js"></script>
+
       <div className={styles.logo}>Quiz</div>
 
       <button className={styles.button}>

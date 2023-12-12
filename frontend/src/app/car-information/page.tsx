@@ -115,6 +115,7 @@ export default function CarInformation() {
           <span aria-required>Гос. номер авто</span>
           <input
             type="text"
+            placeholder="Заполнять латинскими буквами"
             onChange={(e) => {
               updateState({ carStateNumber: e.target.value });
 
@@ -133,6 +134,7 @@ export default function CarInformation() {
           <span aria-required>VIN код</span>
           <input
             type="text"
+            placeholder="Заполнять латинскими буквами"
             onChange={(e) => {
               updateState({ carVINCode: e.target.value });
 

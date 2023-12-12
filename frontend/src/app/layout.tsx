@@ -17,6 +17,10 @@ export default function RootLayout({ children }: IChild) {
   return (
     <html lang="ru">
       <body className={inter.className}>
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script type="text/javascript" src="./metrika.js"></script>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+      <noscript><div><img src="https://mc.yandex.ru/watch/95781936" style={{position: 'absolute', left: '-9999px'}} alt="" /></div></noscript>
         <Container>
           {children}
           <Footer />

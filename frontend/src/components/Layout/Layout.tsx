@@ -26,6 +26,8 @@ export function Layout({ children }: IChild) {
 
   return (
     <main className={styles.main}>
+      {/*eslint-disable-next-line @next/next/no-img-element */}
+      <noscript><div><img src="https://mc.yandex.ru/watch/95781936" style={{position: 'absolute', left: '-9999px'}} alt="" /></div></noscript>
       <h1 className={styles.heading}>Странники</h1>
 
       <div className={styles.wrapper}>{children}</div>
